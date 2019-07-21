@@ -1,0 +1,11 @@
+#node modules
+/node_modules
+
+#build directory
+/build-server
+
+#angular node modules
+/admin-app/node_modules
+
+#idea folder
+.idea/
