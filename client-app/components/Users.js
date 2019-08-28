@@ -1,20 +1,26 @@
 import React, {Component} from 'react'
+import {Table} from 'react-bootstrap'
 import {connect} from 'react-redux'
-import {getUsersList} from '../actions/users'
+import {getUsersList, loggedInuser} from '../actions/users'
 import Header from './Header'
 
 
 const UsersList = ({users}) => {
     return users.map((user, i) => {
         return (<tr key={i}>
+            <td>{user.id}</td>
             <td>{user.name}</td>
-            <td>{user.surname}</td>
-            <td>{user.country}</td>
+            <td>{user.lastName}</td>
+            <td>{user.email}</td>
         </tr>)
     })
 }
 
 class Users extends Component {
+    constructor() {
+        super()
+    }
+
     componentDidMount() {
         this.props.getUsers()
     }
@@ -24,18 +30,19 @@ class Users extends Component {
         return (
             <div>
                 <Header/>
-                <table>
+                <Table striped bordered hover>
                     <thead>
                     <tr>
+                        <th>#</th>
                         <th>Name</th>
+                        <th>Last Name</th>
                         <th>Surname</th>
-                        <th>Country</th>
                     </tr>
                     </thead>
                     <tbody>
                     <UsersList users={users}/>
                     </tbody>
-                </table>
+                </Table>
             </div>
         )
     }
@@ -51,7 +58,7 @@ const mapDispatchToProps = dispatch => {
     return {
         getUsers: () => {
             dispatch(getUsersList())
-        }
+        },
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Users)

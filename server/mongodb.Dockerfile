@@ -1,0 +1,2 @@
+FROM mongo
+EXPOSE 3306

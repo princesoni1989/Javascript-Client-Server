@@ -1,0 +1,12 @@
+{
+  "services": [
+    {
+      "deploymentConfiguration": {
+        "minimumHealthyPercent": 100,
+        "maximumPercent": 200
+      },
+      "taskDefinition": "arn:aws:ecs:us-east-1:491972966736:task-definition/Node-admin:1",
+      "desiredCount": 1
+    }
+  ]
+}

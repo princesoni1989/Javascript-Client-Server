@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {UserService} from "./user.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'admin-app';
+  name = 'admin-app';
+  users = []
+
+
+  constructor(private UserService: UserService) {
+    this.users = UserService.getUsers()
+
+  }
+
+  onClick() {
+  }
 }

@@ -1,0 +1,26 @@
+version: '2'
+services:
+  prince-node-server-test:
+    build:
+      context: ./server
+      dockerfile: server.Dockerfile
+    ports:
+      - "127.0.0.1:4000:8080"
+
+  prince-client:
+    build:
+      context: ./client-app
+      dockerfile: client.Dockerfile
+    ports:
+      - "2001:80"
+
+
+  prince-admin-app:
+    build:
+      context: ./admin-app
+      dockerfile: admin_app.Dockerfile
+    ports:
+      - "2002:80"
+networks:
+  my-bridge:
+    driver: bridge

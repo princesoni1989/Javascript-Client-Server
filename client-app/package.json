@@ -1,0 +1,42 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client-app/index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build":  "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^3.2.0",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.12",
+    "react-dom": "^16.8.6",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "html-webpack-plugin": "^3.2.0",
+    "node-fetch": "^2.6.0",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^0.87.3"
+  }
+}

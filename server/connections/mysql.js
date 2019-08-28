@@ -1,23 +1,27 @@
-import mysql from  'mysql';
-const connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : 'new-password',
-    database : 'sql_node'
+import fs from 'fs';
+import path from 'path';
+import Sequelize from 'sequelize';
+import UserModel from '../client/user/model'
+import PostModel from '../client/post/model'
+
+const sequelize = new Sequelize('sql_node', 'admin', 'new-password', {
+    host: 'database-2.cbq4sukqfpzg.us-east-1.rds.amazonaws.com',
+    dialect: 'mysql',
+    port: 3306,
+    logging: console.log
 });
 
-connection.connect(function () {
-    let createTodos = `create table if not exists todos(
-                          id int primary key auto_increment,
-                          title varchar(255)not null,
-                          completed tinyint(1) not null default 0
-                      )`;
+PostModel.init(sequelize)
+UserModel.init(sequelize)
 
-    connection.query(createTodos, function(err, results, fields) {
-        if (err) {
-            console.log(err.message);
-        }
-    });
-});
+const models = {
+    'user': UserModel,
+    'post': PostModel
+}
 
-export default connection
+// create associations between models
+for (const model of Object.keys(models)) {
+    typeof models[model].associate === 'function' && models[model].associate(models);
+}
+models.sequelize = sequelize;
+export default models;

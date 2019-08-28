@@ -1,3 +1,3 @@
 import mongoose from 'mongoose'
 
-mongoose.connect('mongodb://127.0.0.1:27017/javascript')
+mongoose.connect('mongodb://princesoni:password123@ds255917.mlab.com:55917/mongo_aws', {useNewUrlParser: true})

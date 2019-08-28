@@ -5,7 +5,7 @@ const initialState = []
 function Users(state = initialState, action) {
     switch (action.type) {
         case GET_USER:
-            return [...state, ...action.data]
+            return action.data
         default:
             return state
     }

@@ -1,0 +1,8 @@
+version: '2.1'
+services:
+  prince-admin-app:
+    build:
+      context: .
+      dockerfile: admin_app.Dockerfile
+    ports:
+      - "2002:80"

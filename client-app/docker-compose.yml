@@ -1,0 +1,9 @@
+version: '2.1'
+services:
+  prince-client:
+    build:
+      context: .
+      dockerfile: client.Dockerfile
+    ports:
+      - "2001:80"
+

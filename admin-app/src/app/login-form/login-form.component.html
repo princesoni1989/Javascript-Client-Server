@@ -1,0 +1,16 @@
+<div class="login-form">
+  <h5 *ngIf="redirectUrl" class="alert-danger"> Please login first</h5>
+  <form #from="ngForm" (ngSubmit)="onSubmit(from)">
+    <h2 class="text-center">Log in</h2>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Email" name="email" ngModel>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" placeholder="Password" name="password" ngModel>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </div>
+  </form>
+  <p class="text-center"><a [routerLink]="'/signup'">Create an Account</a></p>
+</div>

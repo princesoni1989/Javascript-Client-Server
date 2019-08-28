@@ -2,10 +2,16 @@
 /node_modules
 
 #build directory
-/build-server
+/client-app/build-client
+/server/build-server
 
 #angular node modules
 /admin-app/node_modules
+/admin-app/dist
+
+/client-app/node_modules
+/server/node_modules
+
 
 #idea folder
 .idea/
